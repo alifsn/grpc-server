@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+message CheckInRequest {
+    string username = 1;
+    string datetime = 2;
+}
+
+message CheckInResponse {
+    string status = 1;
+    string description = 2;
+}
+
+service AttendanceService {
+    rpc CheckIn(CheckInRequest) returns (CheckInResponse) {}
+}
